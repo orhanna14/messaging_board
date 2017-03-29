@@ -3,12 +3,15 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <%= link_to "Message Board", root_path, class: "navbar-brand", id: "logo" %>
-      <%= link_to "Sign up", register_path, class:"btn btn-default navbar-btn" %>
-      <% if logged_in? %>
-       <%= link_to "New article", new_article_path, class:"btn btn-default navbar-btn", id: "new" %>
-       <ul class="nav_item">
+    </div>
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Sign up", register_path, class:"btn btn-default navbar-btn" %></li>
+      <li><% if logged_in? %>
+       <%= link_to "New article", new_article_path, class:"btn btn-default navbar-btn", id: "new" %></li>
+         
+         <ul class="nav navbar-nav navbar-right", style="list-style: none;">
          <li class="dropdown">
-           <%= link_to '#', class: "btn btn-default btn-danger dropdown-toggle", "data-toggle" => "dropdown" do %>
+           <%= link_to '#', class: "btn btn-default navbar-btn dropdown-toggle", "data-toggle" => "dropdown" do %>
            <%= current_user.username %> <b class="caret"></b>
            <% end %>
            <ul class="dropdown-menu">
@@ -17,14 +20,14 @@
              <li class= "divider"></li>
              <li><%= link_to "Logout", logout_path %></li>
            </ul>
+          </ul>
          </li>
        </ul>
        <% else %>
-         <div class="nav_item">
-           <%= link_to "Log in", login_path, class: "btn btn-default btn-success" %>
-         </div>
+         <ul class="nav navbar-nav">
+           <li><%= link_to "Log in", login_path, class: "btn btn-default navbar-btn" %></li>
+         </ul>
          <% end %>
-       
-       
+      </ul>   
     </div>
 </nav>

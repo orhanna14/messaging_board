@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   
     has_many :articles
+    has_many :comments
     before_save { self.email= email.downcase }
     
     validates :username, presence: true, length: {minimum: 3, maximum: 40 }

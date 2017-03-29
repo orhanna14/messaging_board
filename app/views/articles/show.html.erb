@@ -14,19 +14,22 @@
   <%= @article.user.username %>
 </p>
  
-<h3>Comments</h3>
+<p> 
+<strong>Comments:</strong>
 <%= render @article.comments %>
-
- 
+</p>
+<% if logged_in? %>
 <h3>Add a comment:</h3>
 <%= render 'comments/form' %>
- 
-<%= link_to 'See more', user_path(@article.user) %>
+<% end %>
+
+<%= link_to 'See more', user_path(@article.user) %>&nbsp&nbsp
 <% if logged_in? and @article.user == current_user %>
-  <%= link_to 'Edit', edit_article_path(@article) %>
+  <%= link_to 'Edit', edit_article_path(@article) %>&nbsp&nbsp
   <%= link_to 'Destroy', article_path(@article),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
 <% end %>
+&nbsp&nbsp
 <%= link_to 'Back', articles_path %>
 </div>
