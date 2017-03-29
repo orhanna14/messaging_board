@@ -5,7 +5,13 @@
 </head>
 <body>
     <div class="container-fluid">
-<%= link_to 'See blog posts', controller: 'articles' %>
+<%= link_to 'Browse articles as guest', controller: 'articles' %>
+<br>
+<%= link_to 'Log in to your account', login_path, id: "login" %>
+<br>
+<% if logged_in? %>
+ <%= link_to "New article", new_article_path, id: "new" %>
+ <% end %>
     </div>
 </body>
 </html>

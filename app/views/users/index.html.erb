@@ -1,0 +1,20 @@
+<div class="container-fluid">
+<h1>Listing Users</h1>
+<hr>
+
+
+<div class="row">
+ <table>
+    <tr>
+      <% @users.each do |user| %>
+      <td><%= link_to 'See profile', user_path(user) %></td>
+      <td>By: <%= user.username %></td>
+      
+    </tr>
+  <% end %>
+  
+  
+</table>
+<%= will_paginate %>
+</div>
+</div> 

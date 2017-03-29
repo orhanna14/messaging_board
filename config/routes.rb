@@ -1,13 +1,34 @@
 Rails.application.routes.draw do
+  #devise_for :users
+  root 'welcome#index'
   get 'welcome/index'
-
+  
+  #get '/home', to: 'pages#home'
+  #get '/articles', to: 'articles#index'
+  #get '/articles/new', to: 'articles#new', as: 'new_article'
+  #post '/articles', to: 'articles#create'
+  #get '/articles:id/edit', to: 'articles#edit', as: 'edit_article'
+  #patch '/articles/:id', to: 'articles#update'
+  #get 'articles/:id', to: 'articles#show', as: 'article'
+  #delete '/articles/:id', to: 'articles#destroy'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :articles do
    resources :comments
   end
+  
+  resources :users, except: [:new]
+  
+  get '/register', to: 'users#new'
+  
+  get '/login', to: 'logins#new'
+  post '/login', to: 'logins#create'
+  get '/logout', to: 'logins#destroy'
+  
+  
   # You can have the root of your site routed with "root"
-   root 'welcome#index'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

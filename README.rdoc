@@ -13,3 +13,17 @@ email: string
 - email must be present
 - email must be unique (logins)
 - email must be valid
+
+Testing for users:
+
+- Add passwords to the users table so they can be authenticated and logged in
+- User email as log in credentials (since it's unique)
+- Ability to register new users to use app
+- Abilityi to log in and log out of app
+- Restrict actions like create, edit to logged in users only
+- restrict edit of articles by users who created the articles
+
+
+Need to add 
+<% if logged_in? and @article.user == current_user %>
+to index of articles page
