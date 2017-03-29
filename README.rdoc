@@ -1,3 +1,10 @@
+There exists:
+- post index page
+- posts are ordered with most recent at top
+- post show page
+- comments in post show page, with oldest at top
+
+
 testing specs for articles: 
 title: string
 text: text
@@ -22,3 +29,5 @@ Testing for users:
 - Ability to log in and log out of app
 - Restrict actions like create, edit to logged in users only
 - restrict edit of articles by users who created the articles
+- Restrict commenting on other users' posts
+
