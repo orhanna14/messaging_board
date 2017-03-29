@@ -16,9 +16,7 @@
  <table>
     <tr>
       <% @users.each do |user| %>
-      <td><%= link_to 'See profile', user_path(user) %></td>
-      <td>By: <%= user.username %></td>
-      
+      <td><%= link_to user.username+ "'s profile", user_path(user) %></td>
     </tr>
   <% end %>
   
