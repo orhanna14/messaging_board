@@ -1,0 +1,10 @@
+
+one:
+  username: Example
+  email: example@example.com
+  password_digest: password
+
+two:
+  username: Example
+  email: example@example.com
+  password_digest: password
